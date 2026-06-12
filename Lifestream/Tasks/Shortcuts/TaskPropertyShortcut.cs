@@ -160,7 +160,7 @@ public static unsafe class TaskPropertyShortcut
         {
             P.TaskManager.Enqueue(() => WorldChange.ExecuteTPToAethernetDestination(id, subIndex), $"ExecuteTPToAethernetDestination{id}, {subIndex}");
             P.TaskManager.Enqueue(() => !IsScreenReady(), "IsScreenNotReady");
-            P.TaskManager.Enqueue(() => IsScreenReady() && Player.Interactable, "IsScreenReady and Interactable");
+            P.TaskManager.Enqueue(() => IsScreenReady() && Player.Interactable, "IsScreenReady and Interactable", new(timeLimitMS: 15.Minutes()));
             if(data != null && data.PathToEntrance.Count != 0 && mode.EqualsAny(HouseEnterMode.Walk_to_door, HouseEnterMode.Enter_house, HouseEnterMode.Enter_workshop))
             {
                 P.TaskManager.Enqueue(() =>

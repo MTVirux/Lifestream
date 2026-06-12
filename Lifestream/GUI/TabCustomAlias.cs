@@ -604,6 +604,7 @@ public static class TabCustomAlias
                     command.SelectOption.Add("");
                 }
             }
+            ImGuiEx.Checkbox("Excel text comparison option: only first", ref command.ExcelOnlyFirst);
         }
 
         if(command.Kind.Equals(CustomAliasKind.Close_UI))
